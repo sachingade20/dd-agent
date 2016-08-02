@@ -9,6 +9,11 @@ INSTANCE = {
     'services': ['EventLog', 'Dnscache', 'NonExistingService'],
 }
 
+INVALID_HOST_INSTANCE = {
+    'host': 'nonexistinghost'
+}
+
+
 @attr('windows')
 @attr(requires='windows')
 class WindowsServiceTest(AgentCheckTest):
