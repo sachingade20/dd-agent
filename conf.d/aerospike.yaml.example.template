@@ -1,0 +1,13 @@
+init_config:
+
+instances:
+  - host: {{ aerospike_hostname }}
+    additional_metrics:
+      {% for metric in aerospike_additional_metrics %}
+      - {{ metric }}
+      {% endfor %}
+    # Set the host's tags
+    tags:
+       - region:{{ ansible_ec2_placement_region }}
+       - service:{{ service_name }}
+       - service_tag:{{ service_tag_name }}
